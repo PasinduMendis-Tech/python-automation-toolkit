@@ -30,7 +30,10 @@ def organize_files():
                 if any(file_name.lower().endswith(ext) for ext in extensions):
                     destination = os.path.join(SOURCE_FOLDER, folder)
                     os.makedirs(destination, exist_ok=True)
-                    shutil.move(file_path, destination)
+                    destination_path = os.path.join(other_folder, file_name)
+
+if not os.path.exists(destination_path):
+    shutil.move(file_path, other_folder)
                     moved = True
                     break
 
