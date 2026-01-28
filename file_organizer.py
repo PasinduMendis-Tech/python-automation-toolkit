@@ -19,6 +19,8 @@ def organize_files():
         return
 
     for file_name in os.listdir(SOURCE_FOLDER):
+                if file_name.startswith("."):
+            continue
         file_path = os.path.join(SOURCE_FOLDER, file_name)
 
         if os.path.isfile(file_path):
